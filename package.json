@@ -1,0 +1,24 @@
+{
+  "name": "bunnyrace",
+  "version": "1.0.0",
+  "description": "Example of BunnyBus testing setup with longer-than-expected startup time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "docker run -d --name=rabbitmq -p 5671:5671 -p 15672:15672 -p 5672:5672 rabbitmq:3-management && . wait-on-resource.sh && node bunnybus-test.js; docker rm -f rabbitmq"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WesTyler/bunnyrace.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WesTyler/bunnyrace/issues"
+  },
+  "homepage": "https://github.com/WesTyler/bunnyrace#readme",
+  "dependencies": {
+    "bunnybus": "^2.0.4",
+    "code": "^4.0.0",
+    "lab": "^12.1.0"
+  }
+}
